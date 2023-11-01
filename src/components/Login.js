@@ -28,6 +28,8 @@ import Loading from './Loading';
 import { useNavigate } from 'react-router-dom';
 import insenseStick from "../assets/insenseLandingImage.jpeg"
 
+const API_URI = process.env.REACT_APP_API_URI
+
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 const Login = () => {
@@ -69,7 +71,7 @@ const Login = () => {
              return 
           }
 
-          const {data} = await axios.post("/api/users/login",
+          const {data} = await axios.post(`${API_URI}/api/users/login`,
           {
             email:state?.email,
             password:state?.password

@@ -7,6 +7,8 @@ import axios from 'axios'
 import { addToCart } from '../redux/reducers/cartReducers'
 import { useDispatch } from 'react-redux'
 
+const API_URI = process.env.REACT_APP_API_URI
+
 const CartComponent = () => {
 
   const state = useParams()
@@ -16,7 +18,7 @@ const CartComponent = () => {
   const navigate = useNavigate()
   useEffect(() => {
       const getProductById = async() => {
-        const {data} = await axios.get(`/api/products/${state?.id}`)
+        const {data} = await axios.get(`${API_URI}/api/products/${state?.id}`)
         setProductById({...data})
       }
 

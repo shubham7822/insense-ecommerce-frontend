@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import {GrPrevious} from "react-icons/gr"
 import {GrNext} from "react-icons/gr"
 import axios from 'axios';
+const API_URI = process.env.REACT_APP_API_URI
 
 const ProductLists = () => {
 
@@ -71,7 +72,7 @@ const settings = {
  useEffect(() => {
    async function getProducts(){
    try {
-    const {data}  =  await axios.get("/api/products");
+    const {data}  =  await axios.get(`${API_URI}/api/products`);
 
     setProducts([...data])
    }catch(err){

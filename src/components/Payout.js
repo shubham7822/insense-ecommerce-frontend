@@ -2,6 +2,7 @@ import { Box, Button, Card, CardBody,Text } from '@chakra-ui/react'
 import axios from 'axios';
 import React from 'react'
 import { useSelector } from 'react-redux';
+const API_URI = process.env.REACT_APP_API_URI
 
 const Payout = () => {
 
@@ -20,7 +21,7 @@ const Payout = () => {
 
     const handleCheckout = (e) => {
       axios
-        .post(`/api/stripe/checkout`, {
+        .post(`${API_URI}/api/stripe/checkout`, {
           cartItems,
           userId: user?._id,
         })

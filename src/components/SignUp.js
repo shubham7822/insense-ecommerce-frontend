@@ -26,6 +26,7 @@ import Loading from './Loading';
 import { useToast } from '@chakra-ui/react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const API_URI = process.env.REACT_APP_API_URI
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -70,7 +71,7 @@ const SignUp = () => {
           
               setLoading(true)
               const { data } = await axios.post(
-                "/api/users",
+                `${API_URI}/api/users`,
                 { 
                     name:state.name,
                     email:state.email,
