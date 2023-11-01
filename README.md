@@ -1,3 +1,8 @@
+#Incense app ecommerce app for retail store 
+
+shivkrupa insense a retail store near me is popular in my town for selling varios aromatic products.  
+this website showcases someof there products and let you place order from the comfort of your home 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
