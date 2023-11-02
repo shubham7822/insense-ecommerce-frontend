@@ -157,6 +157,24 @@ const Login = () => {
                     <Link>forgot password?</Link>
                   </FormHelperText>
                 </FormControl>
+
+                <Button
+                  variant="solid"
+                  color={"white"}
+                  borderRadius="10px"
+                  bg={"black"}
+                  width="full"
+                  _hover={{bg:"black"}}
+                  onClick={() => {
+                    setState({
+                      ...state,
+                      password:"test@123",
+                      email:"shubham@shivkrupa.com"
+                    })
+                  }}
+                >
+                  Use Guest Credentials
+                </Button>
                 <Button
                   variant="solid"
                   color={"white"}
@@ -166,15 +184,14 @@ const Login = () => {
                   _hover={{bg:"black"}}
                   onClick={onSubmitHandler}
                 >
-                  Login
-                  {/* {!loading ? Login : <Loading/> } */}
+                  {!loading ? "Login" : "logging you in..." }
                 </Button>
               </Stack>
             </form>
           </Box>
         </Stack>
         <Box>
-          New to us?{" "}
+          New to Shivkrupa?{" "}
           <Link color="back" href="/signUp">
             Sign Up
           </Link>

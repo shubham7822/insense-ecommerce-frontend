@@ -179,19 +179,21 @@ const SignUp = () => {
                 <Button
                 //   type="submit"
                   variant="solid"
+                  color={"white"}
                   borderRadius="10px"
                   bg={"black"}
+                  _hover={{bg:"black"}}
                   width="full"
                   onClick={(e) => handleSignUp(e)}
                 >
-                  {!loading ? "sign up" : <Loading/> }
+                  {!loading ? "sign up" : "signing you in..." }
                 </Button>
               </Stack>
             </form>
           </Box>
         </Stack>
         <Box>
-          New to us?{" "}
+          Already have an account?{" "}
           <Link color="back" href="/login">
             Login
           </Link>
