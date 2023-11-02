@@ -130,7 +130,12 @@ const Login = () => {
                       pointerEvents="none"
                       children={<CFaUserAlt color="gray.300" />}
                     />
-                    <Input type="email" name="email" onChange={(e) => handleChange(e)} borderColor="black" bg={"white"} bplaceholder="email address" />
+                    <Input type="email" 
+                    name="email" 
+                    onChange={(e) => handleChange(e)}
+                    borderColor="black" bg={"white"} 
+                    value={state?.email || ""}
+                    placeholder="email address" />
                   </InputGroup>
                 </FormControl>
                 <FormControl>
@@ -144,6 +149,7 @@ const Login = () => {
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder="Password"
+                      value={state?.password || ""}
                       onChange={(e) => handleChange(e)}
                       name="password"
                     />
