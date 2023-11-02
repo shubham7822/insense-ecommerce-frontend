@@ -25,7 +25,6 @@ const CheckoutContainer = () => {
             : 
             <Flex flexDirection={"column"}  width={["500px", "", "", "100%"]}>
                 {cart?.map(item  => {
-                    console.log(item,"item>>")
                     return <>
                     <SubtotalSection product={item}/>
                     </>

@@ -18,7 +18,7 @@ const CardBody = ({ product }) => {
     const navigate = useNavigate();
 
     return (
-        <Box position="relative" shadow="lg" w="400px" h="400px" overflow={"hidden"}>
+        <Box position="relative" shadow="lg" w={{ base: "340px", md: "350px", lg: "400px" }} h="400px" overflow={"hidden"}>
                 <Badge bgColor="black" color="white" position="absolute" top="10px" right="10px">{product.countInStock}</Badge>
                 <Link to={"/"}>
                         <Image w="100%" src={product.imageUrl} h="200px" alt="product" p="4"  objectFit="cover"  />

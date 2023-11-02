@@ -19,21 +19,10 @@ function App() {
   const navigate = useNavigate()
   const [user,setUser] = useState(JSON.parse(localStorage.getItem("userInfo")))
 
-    // if(!isAuthenticated){
-    //  navigate("/")
-    //  return  
-    // }
 
-    // useEffect(() => {
-  
-    //   if(!user){
-    //     navigate("/login")
-    //   }
-    // },[navigate])
 
     const locationArr = window.location.href.split("/")
 
-    console.log(locationArr,"arrr>>>")
     useEffect(() => {
 
       if(!user?.email && !locationArr?.includes("signUp")){
@@ -41,6 +30,8 @@ function App() {
       }
     },[user])
 
+
+    const location = window.location.href.indexOf("cart") != -1
   return (
     <>
     <Routes>
@@ -57,11 +48,11 @@ function App() {
 
      <Route path="*" element={<NotFound/>}/>
   </Routes>
-  <Box bg="black" zIndex={10} position={"fixed"} bottom="0" left="0" right="0" color="white" p="4">
+  <Box bg="black" zIndex={10} display={location ? "none" :"block"} position={"fixed"} bottom="0" left="0" right="0" color="white" p="4">
           <Center>
             <Text>&copy; 2023 Shivkrupa insense. All Rights Reserved.</Text>
           </Center>
-        </Box>
+  </Box>
   </>
   );
 }

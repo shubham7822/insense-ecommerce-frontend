@@ -9,7 +9,6 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state,action) => {
-      console.log(current(state),"state>>>")
       const item = action.payload;
       const existItem = state?.cartItems?.find((x) => x._id === item._id);
       if (existItem) {
@@ -27,7 +26,6 @@ export const cartSlice = createSlice({
       }
     },  
     removeFromCart: (state,action) => {
-      console.log(action.payload,current(state)?.cartItems?.filter(item => item?._id !== action?.payload))
       return {
         ...state,
         cartItems:state?.cartItems?.filter(item => item?._id !== action?.payload)

@@ -25,11 +25,8 @@ const CartComponent = () => {
       getProductById()
   },[])
 
-  console.log(productById,"id>>>")
 
   const addToCartHandler = (e) => {
-     console.log(productById,"id>>>>")
-     console.log({...productById,qty},"30>>>")
      dispatch(addToCart({...productById,qty}))
      navigate("/cart")
      e.preventDefault()
